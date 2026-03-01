@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 
 router.post('/login', (req, res) => {
-    res.send("Usuario logueado")
+    const { userEmail, password } = req.body
+    res.send(`Email de usuario: ${userEmail}, Contraseña ${password}`)
 })
 
 router.post('/logout', (req, res) => {

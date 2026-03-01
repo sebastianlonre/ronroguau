@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
+const apiRouter = require('./router')
+
 const port = 3000
 
-app.get('/', (req, res) =>{
-  res.send('Oliiii')
-})
+app.use('/api', apiRouter)
 
 app.listen(port, () => {
-  console.log(`Server corriendo en el puerto ${port}`)
+  console.log(`Server corriendo:  http://localhost:${port}/`)
 })
